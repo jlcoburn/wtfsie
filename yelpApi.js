@@ -1,6 +1,9 @@
+require('dotenv').config()
 
-const apiKey = 'ZQIZDTrZblEFPNprz4weB8AwkLACQQYMvKDqGil8kkCTkOCsjBR5SmV07mrU-9JX7fjFzIJj-00eLkVqyszHb7oWOx56KN5cPZDnlVLhYHqWw_f3MemBVWv5uXBpXHYx';
+//'ZQIZDTrZblEFPNprz4weB8AwkLACQQYMvKDqGil8kkCTkOCsjBR5SmV07mrU-9JX7fjFzIJj-00eLkVqyszHb7oWOx56KN5cPZDnlVLhYHqWw_f3MemBVWv5uXBpXHYx';
 const fetch = require('node-fetch');
+const apiKey = process.env.YELP_API; 
+
 
 const searchRequest = {
   categories:'restaurants',
@@ -28,6 +31,7 @@ function randomRestaurant(restaurants) {
   const randRestaurant = Math.floor(Math.random() * Math.floor(restaurants.length));
   let chosenRestaurant = {
     name: restaurants[randRestaurant].name,
+    url: restaurants[randRestaurant].url,
     price: restaurants[randRestaurant].price,
     address: restaurants[randRestaurant].location.display_address,
     phone: restaurants[randRestaurant].display_phone,
