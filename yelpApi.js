@@ -6,14 +6,14 @@ const apiKey = process.env.YELP_API;
 
 
 const searchRequest = {
-  categories:'restaurants',
+  categories:'food',
   location: '27360',
   price: '1,2,3,4',
   latitude: '',
   longitude: '',
 };
 
-const yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&location=${searchRequest.location}&open_now=true&price=${searchRequest.price}`;
+const yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&location=${searchRequest.location}&open_now=true&price=${searchRequest.price}&limit=50`;
 
 async function getYelpData() {
  const response = await fetch(yelpURL,
@@ -32,6 +32,7 @@ function randomRestaurant(restaurants) {
   let chosenRestaurant = {
     name: restaurants[randRestaurant].name,
     url: restaurants[randRestaurant].url,
+    image: restaurants[randRestaurant].image_url,
     price: restaurants[randRestaurant].price,
     address: restaurants[randRestaurant].location.display_address,
     phone: restaurants[randRestaurant].display_phone,

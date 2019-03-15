@@ -1,6 +1,16 @@
-<h1>Try this</h1>
-
-<h3><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
-<h3><%= restaurant.price %></h3>
-<h3><%= restaurant.address %></h3>
-<h3><%= restaurant.phone %></h3>
+<% include ./partials/header %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h1>Try this</h1>
+        <img  class=".img-responsive" src=<%= restaurant.image %> alt="restauarant image"/ >
+        <h3><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
+        <h3><%= restaurant.price %></h3>
+        <h3><%= restaurant.address %></h3>
+        <h3><%= restaurant.phone %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer %>
