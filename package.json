@@ -9,6 +9,7 @@
   "author": "Jason Coburn",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "ejs": "^2.6.1",

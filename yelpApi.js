@@ -1,6 +1,5 @@
 require('dotenv').config()
 
-//'ZQIZDTrZblEFPNprz4weB8AwkLACQQYMvKDqGil8kkCTkOCsjBR5SmV07mrU-9JX7fjFzIJj-00eLkVqyszHb7oWOx56KN5cPZDnlVLhYHqWw_f3MemBVWv5uXBpXHYx';
 const fetch = require('node-fetch');
 const apiKey = process.env.YELP_API; 
 
@@ -13,17 +12,18 @@ const searchRequest = {
   longitude: '',
 };
 
-const yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&location=${searchRequest.location}&open_now=true&price=${searchRequest.price}&limit=50`;
 
-async function getYelpData() {
- const response = await fetch(yelpURL,
-  {
-    headers: {
-    Authorization: `Bearer ${apiKey}`
-    }
-  })
-  const json = await response.json();
-  return json.businesses;
+async function getYelpData(location) {
+  let yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&open_now=true&price=${searchRequest.price}&limit=50&location=${location}`;
+
+  const response = await fetch(yelpURL,
+    {
+      headers: {
+      Authorization: `Bearer ${apiKey}`
+      }
+    })
+    const json = await response.json();
+    return json.businesses;
 }
 
 
@@ -41,9 +41,9 @@ function randomRestaurant(restaurants) {
 }
 
 module.exports = function (){
-  this.eatHere = async function() {
+  this.eatHere = async function(location) {
       let chosen;
-      await getYelpData()
+      await getYelpData(location)
       .then((restaurantList)=> {
         chosen = randomRestaurant(restaurantList)
     })

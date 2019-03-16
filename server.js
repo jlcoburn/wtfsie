@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser')
 require('./yelpApi.js')();
 const app = express();
 
@@ -8,14 +9,14 @@ app.use(morgan('dev'));
 app.use(cors());
 app.set('view engine','ejs')
 app.use(express.static(__dirname + "/public"));
-
+app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', (req, res) =>{
   res.render('index')
 })
 
 app.post('/', (req, res) => {
-  console.log(req)
-    getRestaurant().then((restaurant) => {
+  const location = req.body.location
+    getRestaurant(location).then((restaurant) => {
       res.render('rest', {restaurant: restaurant})
     // res.json({
     //   message: restaurant,
@@ -24,8 +25,8 @@ app.post('/', (req, res) => {
   })
 });
 
-async function getRestaurant() {
-  let restaurant = await eatHere()
+async function getRestaurant(location) {
+  let restaurant = await eatHere(location)
   return restaurant;
 }
 
