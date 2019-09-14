@@ -1,5 +1,5 @@
 <% include ./partials/header %>
-<div class="container">
+<!-- <div class="container">
   <div class="d-inline-flex p-2">
     <div class="d-flex flex-column">
       <div class="dflex justify-content-center">
@@ -8,10 +8,10 @@
         </div>
   
         <div class="p-2">
-          <h4><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
-          <h4><%= restaurant.price %></h4>
-          <h4><%= restaurant.address %></h4>
-          <h4><%= restaurant.phone %></h4>
+          <h3><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
+          <h3><%= restaurant.price %></h3>
+          <h3><%= restaurant.address %></h3>
+          <h3><%= restaurant.phone %></h3>
         </div>
   
         <div class="p-2">
@@ -22,6 +22,21 @@
     </div>
   
   </div>
+</div> -->
+
+
+<div class="container">
+  <div class="image">  
+    <img src=<%= restaurant.image %> alt="restauarant image"/ >
+  </div>
+  <div class="restaurant-info"></div>
+    <h3 class="info-item"><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
+    <h3 class="info-item">Price: <%= restaurant.price %></h3>
+    <h3 class="info-item">Address: <%= restaurant.address %></h3>
+    <h3 class="info-item">Phone Number: <%= restaurant.phone %></h3>
+  </div>    
+  <a href="https://www.google.com/maps/?q=<%= restaurant.address %>" class="btn btn-primary">Sounds great. Take me there.</a>
+  <!-- <button class="btn btn-danger">Gross, try again.</button> -->
 </div>
 <script>
 // function tryAgain(location) {
