@@ -28,7 +28,6 @@ async function getYelpData(location) {
 
 
 function randomRestaurant(restaurants) {
-  console.log(restaurants.length);
   const randRestaurant = Math.floor(Math.random() * Math.floor(restaurants.length));
   let chosenRestaurant = {
     name: restaurants[randRestaurant].name,
