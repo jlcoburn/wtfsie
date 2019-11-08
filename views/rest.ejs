@@ -1,33 +1,10 @@
 <% include ./partials/header %>
-<!-- <div class="container">
-  <div class="d-inline-flex p-2">
-    <div class="d-flex flex-column">
-      <div class="dflex justify-content-center">
-        <div class="p-2">
-          <img class=".img-responsive" src=<%= restaurant.image %> alt="restauarant image"/ >
-        </div>
-  
-        <div class="p-2">
-          <h3><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
-          <h3><%= restaurant.price %></h3>
-          <h3><%= restaurant.address %></h3>
-          <h3><%= restaurant.phone %></h3>
-        </div>
-  
-        <div class="p-2">
-          <a href="https://www.google.com/maps/?q=<%= restaurant.address %>" class="btn btn-primary">Sounds great. Take me there.</a>
-          <button class="btn btn-danger">Gross, try again.</button>
-        </div>
-      </div>
-    </div>
-  
-  </div>
-</div> -->
+
 
 
 <div class="container">
   <div class="image">  
-    <img src=<%= restaurant.image %> alt="restauarant image"/ >
+    <img id="restaurant_image" src=<%= restaurant.image %> alt="restauarant image"/ >
   </div>
   <div class="restaurant-info"></div>
     <h3 class="info-item"><a href=<%= restaurant.url %></a><%= restaurant.name %></a></h3>
@@ -38,6 +15,7 @@
   </div>    
   <!-- <button class="btn btn-danger">Gross, try again.</button> -->
 </div>
+
 <script>
 // function tryAgain(location) {
 //   fetch('localhost:5000/',)

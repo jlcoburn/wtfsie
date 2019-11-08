@@ -18,10 +18,7 @@ app.post('/', (req, res) => {
   const location = req.body.location
     getRestaurant(location).then((restaurant) => {
       res.render('rest', {restaurant: restaurant})
-    // res.json({
-    //   message: restaurant,
-    //   //message: '🦄🌈✨Hello World! 🌈✨🦄',
-    // });
+
   })
 });
 
