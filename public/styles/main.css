@@ -24,6 +24,7 @@
 
 .info-item {
   margin: 5px 0px 5px 0px;
+  font-size: 1.5em;
 }
 
 
@@ -40,4 +41,25 @@
 .yelp_logo > img {
   width: 80px;
   height: 40px;
+}
+
+@media (max-width: 800px) {
+  #form {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  
+#restaurant_image {
+  width: 60%;
+  height: 40%;
+
+}
+.info-item {
+  margin: 5px 0px 5px 0px;
+  font-size: 2em;
+  color: red;
+}
+
 }
