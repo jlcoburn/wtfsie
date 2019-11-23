@@ -10,20 +10,25 @@ app.use(cors());
 app.set('view engine','ejs')
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}))
+
+// Routes
+
 app.get('/', (req, res) =>{
   res.render('index')
 })
 
 app.post('/', (req, res) => {
-  const location = req.body.location
-    getRestaurant(location).then((restaurant) => {
+  const location = req.body.location;
+  const price = req.body.priceSlider;
+    getRestaurant(location, price).then((restaurant) => {
       res.render('rest', {restaurant: restaurant})
+      // res.send(req.body)
 
   })
 });
 
-async function getRestaurant(location) {
-  let restaurant = await eatHere(location)
+async function getRestaurant(location, price) {
+  let restaurant = await eatHere(location, price)
   return restaurant;
 }
 

@@ -13,8 +13,8 @@ const searchRequest = {
 };
 
 
-async function getYelpData(location) {
-  let yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&open_now=true&price=${searchRequest.price}&limit=50&location=${location}`;
+async function getYelpData(location, price) {
+  let yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&open_now=true&price=${price}&limit=50&location=${location}`;
 
   const response = await fetch(yelpURL,
     {
@@ -41,9 +41,9 @@ function randomRestaurant(restaurants) {
 }
 
 module.exports = function (){
-  this.eatHere = async function(location) {
+  this.eatHere = async function(location, price) {
       let chosen;
-      await getYelpData(location)
+      await getYelpData(location, price)
       .then((restaurantList)=> {
         chosen = randomRestaurant(restaurantList)
     })
