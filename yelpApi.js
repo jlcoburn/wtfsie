@@ -6,7 +6,7 @@ const apiKey = process.env.YELP_API;
 
 const searchRequest = {
   categories:'food, restaurants',
-  location: '27360',
+  location: '',
   price: '1,2,3,4',
   latitude: '',
   longitude: '',
@@ -14,6 +14,7 @@ const searchRequest = {
 
 
 async function getYelpData(location, price) {
+ 
   let yelpURL = `https://api.yelp.com/v3/businesses/search?cagetories=${searchRequest.categories}&open_now=true&price=${price}&limit=50&location=${location}`;
 
   const response = await fetch(yelpURL,

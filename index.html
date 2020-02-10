@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wtf Should I Eat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="client.css" />
+  
+</head>
+<body>
+  <div class="container">
+
+        <div class="card  text-white bg-secondary mb-3">
+            <div class="card-header"><h2>Where the F*%# Should I Eat</h2></div>
+            <div>
+              <form action="http://localhost:5000" method="post">
+                <div class="form-group">
+
+                  <input id="locationBox" type="text" class="form-control" placeholder="City, State or Zip Code" name="location" aria-label="location" aria-describedby="search location">
+                  <button type="button" class="btn btn-info" id="locationButton" onClick="getLocation()">Use current location</button>
+                  <div class="slidecontainer">
+                    <label for="min_price_slider" id="minPriceSlider">Min price:</label>
+                    <input type="range" min="1" max="4" value="1" class="slider" id="min_price_slider" name="min_price_slider" onchange="showMinValue(this.value, this)"><span id="min_price_display">$</span>
+                    <br>
+                    <label for="max_price_slider" id="maxPriceSlider">Max price:</label>
+                    <input type="range" min="1" max="4" value="1" class="slider" id="max_price_slider" name="max_price_slider" onchange="showMinValue(this.value, this)"><span id="max_price_display">$</span>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <footer class="footer">All restuarant data provided by <img src="./public/yelp_logo.png" alt="yelp logo" class="yelp_logo"></footer>
+          </div>
+
+  </div>
+</body>
+<script src="client.js"></script>
+</html>

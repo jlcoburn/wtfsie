@@ -6,11 +6,35 @@ function getLocation() {
   }
 }
 
-function sendLocation() {
-  let locationValue = document.getElementById('location').value;
-  console.log(locationValue);
+function showPosition(position) {
+  let locationBox = document.getElementById('locationBox');
+  locationBox.value = ` ${position.coords.latitude}, ${position.coords.longitude}`;
 }
 
-function showPosition(position) {
-  console.log(`lattitude: ${position.coords.latitude} longitude:  ${position.coords.longitude}`);
+
+function showMinValue (value, origin) {
+  let newValue = '';
+  switch (value) {
+    case '1': newValue = '$';
+    console.log(newValue)
+    break;
+    case '2':  newValue = '$$';
+    break;
+    case '3': newValue = '$$$';
+    break;
+    case '4': newValue = '$$$$';
+    break;
+    default: newValue = '$'
+  }
+  if (origin.name === 'min_price_slider') {
+    document.querySelector('#min_price_display').innerHTML = newValue;
+  } else {
+    document.querySelector('#max_price_display').innerHTML = newValue;
+  }
+
+  if (document.querySelector('#max_price_slider').value < document.querySelector('#min_price_slider').value) {
+    document.querySelector('#max_price_slider').value = document.querySelector('#min_price_slider').value
+  }
+
+
 }

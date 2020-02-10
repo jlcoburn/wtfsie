@@ -1,0 +1,54 @@
+
+.container {
+  text-align: center;
+  height: 90vh;
+  position: relative;
+}
+
+.card {
+  height: 100%;
+}
+
+.slidecontainer {
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+#max_price_slider {
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+#min_price_slider {
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+#locationButton {
+  margin-top: 5px;
+
+}
+
+#locationBox {
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+#min_price_display {
+  margin-left: 10px;
+}
+
+#max_price_display {
+  margin-left: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}

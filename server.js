@@ -19,22 +19,28 @@ app.get('/', (req, res) =>{
 
 app.post('/', (req, res) => {
   const location = req.body.location;
-  const price = req.body.priceSlider;
-    getRestaurant(location, price).then((restaurant) => {
-      res.render('rest', {restaurant: restaurant})
-      // res.send(req.body)
+  const minPrice = req.body.min_price_slider;
+  const maxPrice = req.body.max_price_slider;
+  let price = '';
+  for (let i = minPrice; i <= maxPrice; i++) {
+    price += i + ','
+  }
+  price = price.slice(0,-1) //remove trailing comma from price string
+  getRestaurant(location, price).then((restaurant) => {
+    //res.render('rest', {restaurant: restaurant})
+      res.send({restaurant: restaurant})
 
   })
 });
 
 async function getRestaurant(location, price) {
-  let restaurant = await eatHere(location, price)
+  let restaurant = await eatHere(location,price)
   return restaurant;
 }
 
 function notFound(req, res, next) {
   res.status(404);
-  const error = new Error('Not Found - ' + req.originalUrl);
+  res.render('404')
   next(error);
 }
 
