@@ -47,6 +47,10 @@
   margin-left: 10px;
 }
 
+.yelp_logo {
+  text-align: center;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

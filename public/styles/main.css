@@ -1,7 +1,7 @@
 .container {
   text-align: center;
   width: 100%;
-  height: 80%;
+  height: 90vh;
 
 }
 
@@ -28,12 +28,6 @@
 }
 
 
-.slidecontainer {
-
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .yelp_logo {
   text-align: center;
 }
@@ -49,14 +43,12 @@
   align-items: center;
 }
 
-@media (max-width: 800px) {
-  #form {
-    width: 50%;
-    display: block;
-    margin: 0 auto;
-  }
+@media (min-width: 800px) {
 
-  
+.container{
+  width: 100%;
+  height: 90vh;
+}  
 #restaurant_image {
   width: 60%;
   height: 40%;
