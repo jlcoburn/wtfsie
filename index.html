@@ -23,10 +23,10 @@
                   <button type="button" class="btn btn-info" id="locationButton" onClick="getLocation()">Use current location</button>
                   <div class="slidecontainer">
                     <label for="min_price_slider" id="minPriceSlider">Min price:</label>
-                    <input type="range" min="1" max="4" value="1" class="slider" id="min_price_slider" name="min_price_slider" onchange="showMinValue(this.value, this)"><span id="min_price_display">$</span>
+                    <input type="range" min="1" max="4" value="1" class="slider" id="min_price_slider" name="min_price_slider" onchange="showValue(this.value, this)"><span id="min_price_display">$</span>
                     <br>
                     <label for="max_price_slider" id="maxPriceSlider">Max price:</label>
-                    <input type="range" min="1" max="4" value="1" class="slider" id="max_price_slider" name="max_price_slider" onchange="showMinValue(this.value, this)"><span id="max_price_display">$</span>
+                    <input type="range" min="1" max="4" value="1" class="slider" id="max_price_slider" name="max_price_slider" onchange="showValue(this.value, this)"><span id="max_price_display">$</span>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

@@ -12,29 +12,25 @@ function showPosition(position) {
 }
 
 
-function showMinValue (value, origin) {
+function showValue (value, origin) {
   let newValue = '';
-  switch (value) {
-    case '1': newValue = '$';
-    console.log(newValue)
-    break;
-    case '2':  newValue = '$$';
-    break;
-    case '3': newValue = '$$$';
-    break;
-    case '4': newValue = '$$$$';
-    break;
-    default: newValue = '$'
+
+  for (let i = 1; i <= value; i++) {
+    newValue += '$'
   }
   if (origin.name === 'min_price_slider') {
     document.querySelector('#min_price_display').innerHTML = newValue;
   } else {
     document.querySelector('#max_price_display').innerHTML = newValue;
   }
-
+  //TODO: Clean this up so I'm not repeating the above code
   if (document.querySelector('#max_price_slider').value < document.querySelector('#min_price_slider').value) {
+    let maxValue = ''
     document.querySelector('#max_price_slider').value = document.querySelector('#min_price_slider').value
+    for (let i = 1; i <= document.querySelector('#min_price_slider').value; i++) {
+      maxValue += '$'
+    }
+    document.querySelector('#max_price_display').innerHTML = maxValue;
   }
-
 
 }
