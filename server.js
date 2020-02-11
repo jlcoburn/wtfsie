@@ -27,8 +27,8 @@ app.post('/', (req, res) => {
   }
   price = price.slice(0,-1) //remove trailing comma from price string
   getRestaurant(location, price).then((restaurant) => {
-    //res.render('rest', {restaurant: restaurant})
-      res.send({restaurant: restaurant})
+    res.render('rest', {restaurant: restaurant})
+      //res.send({restaurant: restaurant})
 
   })
 });
