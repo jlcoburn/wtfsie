@@ -13,17 +13,19 @@
     <h3 class="info-item">Price: <%= restaurant.price %></h3>
     <h3 class="info-item">Address: <%= restaurant.address %></h3>
     <h3 class="info-item">Phone Number: <%= restaurant.phone %></h3>
-    <a href="https://www.google.com/maps/?q=<%= restaurant.address %>" class="btn btn-primary">Sounds great. Take me there.</a>
+    <!-- <a href="https://www.google.com/maps/?q=<%= restaurant.address %>" class="btn btn-primary">Sounds great. Take me there.</a> -->
+    <Button class="btn btn-primary map-button" onclick="openMap('<%=restaurant.address%>')">Take Me There</Button>
   </div>    
   <!-- <button class="btn btn-danger">Gross, try again.</button> -->
   </div>
 </div>
 
 <script>
-// function tryAgain(location) {
-//   fetch('localhost:5000/',)
+function openMap(address) {
+  const url = `https://www.google.com/maps/?q=${address}`
+  window.open(url)
+}
 
-// }
 
 </script>
 <% include ./partials/footer %>
