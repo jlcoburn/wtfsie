@@ -7,7 +7,7 @@ const apiKey = process.env.YELP_API;
 const searchRequest = {
   categories:'food, restaurants',
   location: '',
-  price: '1,2,3,4',
+  price: '',
   latitude: '',
   longitude: '',
 };
