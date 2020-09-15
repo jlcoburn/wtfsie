@@ -15,7 +15,8 @@
     <h3 class="info-item">Phone Number: <%= restaurant.phone %></h3>
     <!-- <Button class="btn btn-primary map-button" onclick="openMap('<%=restaurant.address%>')">Take Me There</Button> -->
     <!-- <Button class="btn btn-primary map-button" onclick="parent.location='https://www.google.com/maps/?q=<%= restaurant.address %>'">Take Me There</Button> -->
-    <Button class="btn btn-primary map-button" onclick="parent.location='geo:0,0?=<%= restaurant.address %>'">Take Me There</Button>
+    <!-- <Button class="btn btn-primary map-button" onclick="parent.location='geo:0,0?=<%= restaurant.address %>'">Take Me There</Button> -->
+    <a href="geo:0,0?=<%= restaurant.address %>">Take Me There</a>
   </div>    
   <!-- <button class="btn btn-danger">Gross, try again.</button> -->
   </div>
