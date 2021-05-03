@@ -5,6 +5,9 @@
 
 }
 
+.card {
+  padding: 1rem 0 1rem 0;
+}
 
 #restaurant_image {
   width: 40%;
